@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selindell - 物流信息</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        body {
+            background: #f5f7fa;
+            padding: 20px;
+        }
+        .logistics-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #1a73e8;
+            margin-bottom: 20px;
+        }
+        .logistics-info {
+            margin-bottom: 20px;
+        }
+        .logistics-info p {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .design-preview {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .design-preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .action-button {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+        }
+        .action-button:hover {
+            background: #1557b5;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+        }
+        .modal-content h3 {
+            margin-bottom: 15px;
+            color: #1a73e8;
+        }
+        .modal-content p {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .modal-content label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .modal-content input, 
+        .modal-content textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .modal-content button {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal-content button:hover {
+            background: #1557b5;
+        }
+    </style>
+</head>
+<body>
+    <div class="logistics-container">
+        <h2>物流信息</h2>
+        <div class="logistics-info">
+            <p><strong>当前状态：</strong>已发货</p>
+            <p><strong>目的地：</strong>北京市朝阳区</p>
+            <p><strong>预计到达时间：</strong>2025年4月20日</p>
+        </div>
+        <div class="design-preview">
+            <h3>你的设计预览</h3>
+            <img src="your-design-image.jpg" alt="设计预览">
+            <p>设计描述：紫色的赛博朋克风小熊</p>
+        </div>
+        <!-- 按钮放在物流信息框内 -->
+        <div class="action-buttons">
+            <button class="action-button" onclick="showLogisticsDetails()">查看物流</button>
+            <button class="action-button" onclick="showRefundForm()">我要退款</button>
+        </div>
+    </div>
+
+    <!-- 查看物流模态框 -->
+    <div class="modal" id="logisticsModal">
+        <div class="modal-content">
+            <h3>物流详情</h3>
+            <p>最后物流送达地点：北京市朝阳区某某街道某某小区</p>
+            <button onclick="closeModal('logisticsModal')">关闭</button>
+        </div>
+    </div>
+
+    <!-- 退款模态框 -->
+    <div class="modal" id="refundModal">
+        <div class="modal-content">
+            <h3>申请退款</h3>
+            <label>退款原因</label>
+            <textarea placeholder="请输入退款原因"></textarea>
+            <label>联系方式</label>
+            <input type="text" placeholder="请输入你的联系方式">
+            <button>提交申请</button>
+            <button onclick="closeModal('refundModal')" style="background: #ccc; margin-left: 10px;">取消</button>
+        </div>
+    </div>
+
+    <script>
+        // 显示物流详情模态框
+        function showLogisticsDetails() {
+            document.getElementById('logisticsModal').style.display = 'flex';
+        }
+
+        // 显示退款模态框
+        function showRefundForm() {
+            document.getElementById('refundModal').style.display = 'flex';
+        }
+
+        // 关闭模态框
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>

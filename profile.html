@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 - Selindell</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        body {
+            background: #f5f7fa;
+            padding: 20px;
+        }
+        .profile-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #666;
+            cursor: pointer;
+        }
+        .profile-avatar:hover {
+            background: #ccc;
+        }
+        .profile-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-info h2 {
+            font-size: 1.5rem;
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+        .profile-info p {
+            color: #666;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #1557b5;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-avatar" onclick="changeAvatar()">
+            👤
+        </div>
+        <div class="profile-info">
+            <h2 id="nickname">昵称：未设置</h2>
+            <p id="email">邮箱：未设置</p>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="nicknameInput">修改昵称</label>
+                <input type="text" id="nicknameInput" placeholder="输入新的昵称">
+            </div>
+            <div class="form-group">
+                <label for="emailInput">修改邮箱</label>
+                <input type="email" id="emailInput" placeholder="输入新的邮箱">
+            </div>
+            <div class="form-group">
+                <label for="passwordInput">修改密码</label>
+                <input type="password" id="passwordInput" placeholder="输入新的密码">
+            </div>
+            <button type="button" onclick="saveProfile()">保存修改</button>
+        </form>
+    </div>
+
+    <script>
+        function changeAvatar() {
+            alert("更换头像功能尚未实现！");
+        }
+
+        function saveProfile() {
+            const nickname = document.getElementById('nicknameInput').value;
+            const email = document.getElementById('emailInput').value;
+
+            if (nickname) {
+                document.getElementById('nickname').textContent = `昵称：${nickname}`;
+            }
+            if (email) {
+                document.getElementById('email').textContent = `邮箱：${email}`;
+            }
+
+            alert("个人信息已保存！");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selindell - AI潮玩定制平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        body {
+            background: #f0f2f5;
+            color: #1a73e8;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(45deg, #1a73e8, #f5a623);
+            color: white;
+            position: relative;
+            padding: 20px;
+        }
+        .hero-content {
+            max-width: 800px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background: white;
+            color: #1a73e8;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 80px; /* 上移位置 */
+            font-size: 1.8rem; /* 增大字体 */
+            font-weight: bold; /* 加粗字体 */
+            color: white;
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .features {
+            padding: 50px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 适配小屏幕 */
+            gap: 20px;
+        }
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            font-size: 2rem; /* 调整图标大小 */
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px; /* 减小内边距 */
+            background: #1a73e8;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 0.8rem; /* 调整字体大小 */
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem; /* 调整标题大小 */
+            }
+            .cta-button {
+                font-size: 1rem; /* 调整按钮字体大小 */
+                padding: 10px 30px; /* 调整按钮内边距 */
+            }
+            .scroll-indicator {
+                font-size: 1.2rem; /* 调整指引字体大小 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Selindell</h1>
+            <p>用AI设计专属你的手办与毛绒玩具</p>
+            <!-- 跳转到分享页面 share.html -->
+            <button class="cta-button" onclick="jumpToSharePage()">开始设计</button>
+        </div>
+        <div class="scroll-indicator">下滑了解更多 ↓</div>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>AI设计工具</h3>
+            <p>使用智能设计工具创作独一无二的造型</p>
+            <!-- 跳转到分享页面 share.html -->
+            <button class="cta-button" onclick="jumpToSharePage()">开始设计</button>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📤</div>
+            <h3>用户设计分享</h3>
+            <p>看看其他用户的创意设计，分享你的独特作品</p>
+            <!-- 跳转到设计页面 design.html -->
+            <button class="cta-button" onclick="jumpToDesignPage()">查看分享</button>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🚚</div>
+            <h3>生产配送</h3>
+            <p>专业工厂生产，全球物流直达</p>
+            <!-- 跳转到 logistics.html -->
+            <button class="cta-button" onclick="jumpToLogisticsPage()">查看物流</button>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">👤</div>
+            <h3>我的</h3>
+            <p>管理个人信息和设置</p>
+            <!-- 跳转到 profile.html -->
+            <button class="cta-button" onclick="jumpToProfilePage()">查看我的</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Selindell. 版权所有 | 联系我们：contact@selindell.com</p>
+        <p>特别鸣谢：壹之品科技</p>
+    </footer>
+
+    <script>
+        function jumpToDesignPage() {
+            window.location.href = "design.html"; // 跳转到设计页面
+        }
+
+        function jumpToSharePage() {
+            window.location.href = "share.html"; // 跳转到分享页面
+        }
+
+        function jumpToLogisticsPage() {
+            window.location.href = "logistics.html"; // 跳转到 logistics.html
+        }
+
+        function jumpToProfilePage() {
+            window.location.href = "profile.html"; // 跳转到 profile.html
+        }
+    </script>
+</body>
+</html>

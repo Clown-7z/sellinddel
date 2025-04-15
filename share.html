@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selindell AI设计工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+        body {
+            background: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .tool-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1a73e8;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        button {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #1557b5;
+        }
+        .preview-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .preview-image {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            background: #f5f7fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+        .preview-image img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tool-container">
+        <h2 style="text-align: center; color: #1a73e8; margin-bottom: 30px;">AI手办/毛绒玩具设计</h2>
+        
+        <div class="input-group">
+            <label>输入设计关键词（例如：紫色的赛博朋克风小熊）</label>
+            <input type="text" id="keywordInput" placeholder="输入你的设计想法">
+        </div>
+
+        <div class="input-group">
+            <label>选择制作类型</label>
+            <select id="typeSelect">
+                <option value="figure">手办</option>
+                <option value="plush">毛绒玩具</option>
+            </select>
+        </div>
+
+        <button onclick="generateDesign()">生成设计预览</button>
+
+        <div class="preview-section">
+            <div class="preview-image" id="previewImage">
+                <img id="previewImg" src="" alt="设计预览">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateDesign() {
+            const keyword = document.getElementById('keywordInput').value;
+            const type = document.getElementById('typeSelect').value;
+
+            if (!keyword) {
+                alert("请输入设计关键词");
+                return;
+            }
+
+            // 模拟AI生成逻辑（实际需对接AI接口）
+            const mockResult = `AI生成：${keyword}，制作成${type === 'figure' ? '手办' : '毛绒玩具'}`;
+            const previewImage = document.getElementById('previewImg');
+
+            // 设置示例图片
+            previewImage.src = "https://via.placeholder.com/200?text=AI设计预览";
+            previewImage.alt = mockResult;
+
+            // 显示生成的文本描述
+            document.getElementById('previewImage').title = mockResult;
+        }
+    </script>
+</body>
+</html>
